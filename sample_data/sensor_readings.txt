@@ -1,0 +1,6 @@
+Calibration readings log for GAS-DET-11:
+Date: 2026-06-20
+Status: Calibrated sensor using methane test gas canister. Drift was +1.2% LEL.
+Technician: Alex Mercer
+Notes: Sensor chamber was cleaned. Next audit due in 30 days.
+Warning: Exposure to silicone vapors will poisoned the catalytic bead sensor element.

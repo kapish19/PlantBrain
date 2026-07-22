@@ -1,0 +1,4 @@
+serial_number,device_class,location_zone,installation_date,notes
+SN-552,COMPRESSOR-5,Zone B,2021-04-12,"Primary instrument air compressor for pressure valves."
+SN-789,VALVE-102,Zone C,2022-09-18,"Control valve regulating crude oil transfer loop."
+SN-110,GAS-DET-11,Zone B,2023-01-10,"Methane safety gas detector sensor unit."

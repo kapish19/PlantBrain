@@ -1,0 +1,5 @@
+work_order_id,equipment_id,equipment_name,date,technician,issue_reported,action_taken,downtime_hours,status
+WO-501,COMPRESSOR-5,Instrument Air Compressor,2026-05-10,Alex Mercer,Air pressure drops below 5 bar under peak load.,"Replaced cracked compressor piston rings and gaskets.",6.0,Completed
+WO-502,COMPRESSOR-5,Instrument Air Compressor,2026-05-18,Sarah Connor,Abnormal oil temperature reading (85C) in crankcase.,"Flushed oil reservoir, replaced thermostatic valve.",4.5,Completed
+WO-503,COMPRESSOR-5,Instrument Air Compressor,2026-06-02,Michael Chen,Unusual noise from drive belt during startup.,"Tensioned V-belts and aligned pulley shafts.",2.0,Completed
+WO-504,COMPRESSOR-5,Instrument Air Compressor,2026-06-15,Alex Mercer,Automatic safety shutdown triggered due to overpressure.,"Replaced faulty pressure switch assembly.",3.5,Completed

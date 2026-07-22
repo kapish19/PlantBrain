@@ -1,0 +1,4 @@
+inspection_id,equipment_id,date,inspector,findings,compliance_status,next_inspection_due
+INSP-901,VALVE-102,2026-05-12,David Vance,"Valve stem packing shows signs of slight wear and minor leakage.",Compliant,2026-11-12
+INSP-902,VALVE-102,2026-06-12,Sarah Connor,"Stem packing leak progressed; packing gland tightened, leak stopped.",Compliant,2026-12-12
+INSP-903,VALVE-102,2026-07-12,David Vance,"Control valve actuator failure during safety stroke test. Valve failed to close.",Non-Compliant,2026-07-19

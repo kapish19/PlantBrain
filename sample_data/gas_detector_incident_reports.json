@@ -1,0 +1,22 @@
+[
+    {
+        "report_id": "INC-2026-901",
+        "date": "2026-06-10",
+        "location": "Gas Detector Area B (GAS-DET-11)",
+        "equipment_involved": "GAS-DET-11",
+        "description": "Transient high methane alarm (15% LEL) triggered in Area B during night shift.",
+        "root_cause": "Fugitive emission from crude oil transfer flange upstream; resolved by flange bolt tightening.",
+        "severity": "Medium",
+        "corrective_action": "Tightened flange bolts, calibrated GAS-DET-11 to verify accuracy."
+    },
+    {
+        "report_id": "INC-2026-902",
+        "date": "2026-06-25",
+        "location": "Gas Detector Area B (GAS-DET-11)",
+        "equipment_involved": "GAS-DET-11",
+        "description": "Methane sensor calibration failure during weekly safety test.",
+        "root_cause": "Sensor poisoning from silicone compound vapors used in nearby painting work.",
+        "severity": "High",
+        "corrective_action": "Replaced poisoned gas sensor element, calibrated and updated warning procedure."
+    }
+]

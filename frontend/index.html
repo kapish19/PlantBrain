@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantBrain: AI Industrial Knowledge Intelligence</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+
+    <div class="app-layout">
+        <!-- Top Horizontal Header Navigation -->
+        <header class="app-header-top" id="tour-step-1">
+            <div class="header-left">
+                <div class="brand">
+                    <i class="fa-solid fa-brain brand-icon"></i>
+                    <h2>PlantBrain</h2>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-link active" onclick="switchTab('overview')" id="nav-overview">
+                    <span>Overview</span>
+                </button>
+                <button class="nav-link" onclick="switchTab('copilot')" id="nav-copilot">
+                    <span>Copilot</span>
+                </button>
+                <button class="nav-link" onclick="switchTab('patterns')" id="nav-patterns">
+                    <span>Insights</span>
+                </button>
+                <button class="nav-link" onclick="switchTab('timeline')" id="nav-timeline">
+                    <span>Timeline</span>
+                </button>
+                <button class="nav-link" onclick="switchTab('pid')" id="nav-pid">
+                    <span>Blueprint</span>
+                </button>
+                <button class="nav-link" onclick="switchTab('compliance')" id="nav-compliance">
+                    <span>Compliance</span>
+                </button>
+            </nav>
+
+            <div class="header-right">
+                <div class="search-box-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+
+                <button class="btn-icon" title="Notifications" style="position: relative; cursor: pointer;">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="User Avatar" class="avatar-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Workspace Container -->
+        <div class="main-content">
+            <!-- Operational Sub-Header Bar -->
+            <div class="app-subheader">
+                <div class="subheader-left">
+                    <span class="badge-tag">GLOBAL DASHBOARD</span>
+                    <h2 id="page-title" style="font-size: 20px; font-weight: 700; margin-top: 2px;">Central Operations Hub</h2>
+                </div>
+                <div class="subheader-right">
+                    <div class="uptime-widget">
+                        <span class="pulse-dot"></span>
+                        <span>Uptime: 142d 12h</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" id="view-graph-btn">
+                        <i class="fa-solid fa-circle-nodes"></i> Visualize Knowledge Graph
+                    </button>
+                    <span class="badge badge-outline" id="node-count-badge">0 Graph Nodes</span>
+                    <span class="badge badge-success" id="ingest-status-badge" style="background-color: var(--color-warning); color: #fff;">Uninitialized</span>
+                </div>
+            </div>
+
+            <!-- Tab 0: Overview Command Center (Default Home Page) -->
+            <div class="tab-content active" id="tab-overview-content">
+                <div class="overview-layout-container">
+                    
+                    <!-- Left Section: Hero & 2x2 Modules Grid (70% width) -->
+                    <div class="overview-main-section">
+                        
+                        <!-- Hero Banner Card -->
+                        <div class="overview-hero-card">
+                            <div class="hero-text-content">
+                                <h1 class="hero-title">Welcome to PlantBrain Hub</h1>
+                                <p class="hero-subtitle">
+                                    Your unified dashboard for cognitive RAG search, interactive Piping & Instrumentation Diagram (P&ID) blueprints, chronological asset history tracking, and safety compliance audits.
+                                </p>
+                            </div>
+                            <div class="hero-visual">
+                                <!-- Stylized SVG robotic arm / machinery animation -->
+                                <svg viewBox="0 0 100 100" class="robotic-arm-svg">
+                                    <!-- Base -->
+                                    <rect x="25" y="80" width="50" height="10" rx="2" fill="currentColor" opacity="0.15" />
+                                    <path d="M 35 80 L 45 60 L 55 60 L 65 80 Z" fill="currentColor" opacity="0.3" />
+                                    <!-- Arm segments -->
+                                    <g class="arm-joint-1">
+                                        <circle cx="50" cy="60" r="6" fill="currentColor" opacity="0.4" />
+                                        <rect x="47" y="25" width="6" height="35" rx="3" fill="currentColor" opacity="0.3" />
+                                        <g class="arm-joint-2">
+                                            <circle cx="50" cy="25" r="5" fill="currentColor" opacity="0.5" />
+                                            <rect x="48" y="5" width="4" height="20" rx="2" fill="currentColor" opacity="0.4" />
+                                            <!-- Claw -->
+                                            <g class="arm-claw">
+                                                <path d="M 45 5 L 43 0 M 55 5 L 57 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                                                <path d="M 40 -3 L 45 0 L 55 0 L 60 -3" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Modules Grid (2x2) -->
+                        <div class="overview-modules-grid">
+                            
+                            <!-- Module 01: Expert RAG Copilot -->
+                            <div class="module-card card-copilot hover-lift" onclick="switchTab('copilot')">
+                                <div class="module-card-header">
+                                    <div class="module-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                                    <span class="module-number">MODULE: 01</span>
+                                </div>
+                                <h3 class="module-title">Expert RAG Copilot</h3>
+                                <p class="module-desc">
+                                    Query safety codes, guidelines, and manuals with citations. AI-powered industrial knowledge retrieval.
+                                </p>
+                            </div>
+                            
+                            <!-- Module 02: P&ID Blueprint Visualizer -->
+                            <div class="module-card card-pid hover-lift" onclick="switchTab('pid')">
+                                <div class="module-card-header">
+                                    <div class="module-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                                    <span class="module-number">MODULE: 02</span>
+                                </div>
+                                <h3 class="module-title">P&ID Blueprint Visualizer</h3>
+                                <p class="module-desc">
+                                    View interactive diagrams and live telemetry stream values synced directly with PLC data.
+                                </p>
+                            </div>
+                            
+                            <!-- Module 03: Asset Timeline & RCA -->
+                            <div class="module-card card-timeline hover-lift" onclick="switchTab('timeline')">
+                                <div class="module-card-header">
+                                    <div class="module-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                    <span class="module-number">MODULE: 03</span>
+                                </div>
+                                <h3 class="module-title">Asset Timeline & RCA</h3>
+                                <p class="module-desc">
+                                    Access chronological logs and run dynamic AI 5-Whys analysis for root cause investigation.
+                                </p>
+                            </div>
+                            
+                            <!-- Module 04: Compliance Audit Manager -->
+                            <div class="module-card card-compliance hover-lift" onclick="switchTab('compliance')">
+                                <div class="module-card-header">
+                                    <div class="module-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                    <span class="module-number">MODULE: 04</span>
+                                </div>
+                                <h3 class="module-title">Compliance Audit Manager</h3>
+                                <p class="module-desc">
+                                    Audit safety rules (Factory Act, PESO) & export PDF audit packages with one click.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Right Section: Live Safety Alerts (30% width) -->
+                    <div class="overview-sidebar-section">
+                        <div class="alerts-sidebar-card">
+                            <div class="alerts-sidebar-header">
+                                <div class="alerts-header-left">
+                                    <i class="fa-regular fa-bell alerts-bell-icon"></i>
+                                    <h3>Live Safety Alerts</h3>
+                                </div>
+                                <span class="view-all-link" onclick="switchTab('patterns')">VIEW ALL</span>
+                            </div>
+                            
+                            <div class="alerts-sidebar-list" id="overview-alerts-list">
+                                
+                                <!-- Alert 1: Critical -->
+                                <div class="alert-sidebar-item border-critical hover-lift" onclick="switchTab('patterns')">
+                                    <div class="alert-item-header">
+                                        <span class="alert-label badge-critical">CRITICAL</span>
+                                        <span class="alert-time">14:22 UTC</span>
+                                    </div>
+                                    <h4 class="alert-subject">COMPRESSOR-5 Cyclical Failure</h4>
+                                    <p class="alert-body-text">
+                                        Asset fails repeatedly every 54 days due to valve wear issues. Recommend immediate inspection.
+                                    </p>
+                                </div>
+                                
+                                <!-- Alert 2: Warning -->
+                                <div class="alert-sidebar-item border-warning hover-lift" onclick="switchTab('patterns')">
+                                    <div class="alert-item-header">
+                                        <span class="alert-label badge-warning">WARNING</span>
+                                        <span class="alert-time">13:05 UTC</span>
+                                    </div>
+                                    <h4 class="alert-subject">GAS-DET-11 Calibration Gap</h4>
+                                    <p class="alert-body-text">
+                                        Methane detector drift failure (+18%) missed safety window. Recalibration required.
+                                    </p>
+                                </div>
+                                
+                                <!-- Alert 3: Info -->
+                                <div class="alert-sidebar-item border-info hover-lift" onclick="switchTab('patterns')">
+                                    <div class="alert-item-header">
+                                        <span class="alert-label badge-info">INFO</span>
+                                        <span class="alert-time">12:50 UTC</span>
+                                    </div>
+                                    <h4 class="alert-subject">PUMP-B Shift Changeover</h4>
+                                    <p class="alert-body-text">
+                                        Normal operation. Shift 2 handover completed. All parameters within nominal range.
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Tab 1: Expert Copilot Chat -->
+            <div class="tab-content" id="tab-copilot-content">
+                <div class="copilot-workspace" id="tour-step-2">
+                    <!-- Chat Message Area -->
+                    <div class="chat-log" id="chat-history">
+                        <div class="message message-system">
+                            <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="message-content">
+                                <h3>Welcome to PlantBrain Copilot</h3>
+                                <p>Ask natural-language questions to query safety guidelines, equipment manuals, incident logs, and maintenance records in real-time.</p>
+                                <div class="suggestion-group" id="tour-step-3">
+                                    <span class="suggestion-chip" onclick="fillQuery('What is the maintenance history of PUMP-204?')">PUMP-204 History</span>
+                                    <span class="suggestion-chip" onclick="fillQuery('What is the safety procedure for confined space entry?')">Confined Space SOP</span>
+                                    <span class="suggestion-chip" onclick="fillQuery('Has there been a pressure relief valve failure on BOILER-3?')">PRV scale issue</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="chat-input-wrapper">
+                        <div class="chat-input-bar">
+                            <textarea id="chat-input" placeholder="Ask about safety SOPs, equipment specifications, failure logs..." rows="1"></textarea>
+                            <button id="send-btn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                        <div class="chat-input-meta">
+                            <span>Google Gemini 3 Flash</span>
+                            <span>Press Enter to submit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Proactive Pattern Insights -->
+            <div class="tab-content" id="tab-patterns-content">
+                <div class="patterns-workspace" id="tour-step-4">
+                    <div class="workspace-header">
+                        <p class="text-muted">Proactive intelligence scans maintenance logs and incident records to identify critical failure cycles and safety vulnerabilities.</p>
+                        <button class="btn btn-secondary" id="refresh-patterns-btn"><i class="fa-solid fa-arrows-rotate"></i> Rescan Assets</button>
+                    </div>
+                    <div class="insights-list" id="insights-container">
+                        <!-- Dynamic Insights Cards -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Asset Chronological Timeline -->
+            <div class="tab-content" id="tab-timeline-content">
+                <div class="timeline-workspace" id="tour-step-5">
+                    <div class="workspace-header">
+                        <p class="text-muted">Consolidate work orders, inspections, and incident logs chronologically to audit equipment reliability history.</p>
+                        <div class="select-wrapper">
+                            <select id="equipment-select" class="equip-select">
+                                <option value="" disabled selected>Select equipment to audit...</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-wrapper" id="timeline-container">
+                        <div class="timeline-placeholder">
+                            <i class="fa-solid fa-timeline placeholder-icon"></i>
+                            <h4>Audit Timeline History</h4>
+                            <p>Choose an industrial asset from the dropdown list to generate a chronological event trace.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: P&ID Blueprint Tag Hotspot Visualizer -->
+            <div class="tab-content" id="tab-pid-content">
+                <div class="patterns-workspace">
+                    <div class="workspace-header">
+                        <p class="text-muted">Interactive Piping & Instrumentation Diagram (P&ID). Click on tag hotspots to audit live equipment details and cross-reference RAG manuals.</p>
+                        <span class="badge badge-outline"><i class="fa-solid fa-crosshairs"></i> Interactive Hotspots Active</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 20px; flex-grow: 1; overflow: hidden; margin-top: 10px;">
+                        <!-- Left: Interactive SVG Diagram -->
+                        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 20px; overflow: auto; position: relative;">
+                            <svg viewBox="0 0 800 450" width="100%" height="100%" style="max-height: 420px; border-radius: 8px;">
+                                <!-- Grid background -->
+                                <defs>
+                                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f1f5f9" stroke-width="1.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                                
+                                <!-- Main Gas Process Line -->
+                                <path class="flowing-pulse-line" d="M 50 150 L 250 150 L 250 250 L 550 250 L 550 150 L 750 150" fill="none" stroke="#0284c7" stroke-width="4" stroke-dasharray="10,6" />
+                                <path class="flowing-pulse-line-slow" d="M 150 150 L 150 350 L 400 350 L 400 250" fill="none" stroke="#64748b" stroke-width="2.5" stroke-dasharray="6,6" />
+                                
+                                <!-- Pressure Release Line -->
+                                <path class="flowing-pulse-line" d="M 480 250 L 480 120 L 600 120" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="6,4" />
+                                
+                                <!-- Compressor-5 Shape -->
+                                <rect x="200" y="100" width="100" height="100" rx="10" fill="rgba(14, 165, 233, 0.05)" stroke="#0284c7" stroke-width="3" />
+                                <circle cx="250" cy="150" r="30" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="4,2" />
+                                <text x="250" y="155" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#0284c7" text-anchor="middle">COMP-5</text>
+                                
+                                <!-- Hotspot overlay COMPRESSOR-5 -->
+                                <g style="cursor: pointer;" onclick="selectPidTag('COMPRESSOR-5', 'Gas Compressor', 'Warning (Cyclical Wear Loop)', 'compressor_maintenance_logs.csv', 'Warning: Wear intervals identified. Overdue scheduled lubrication cycle.')">
+                                    <circle cx="250" cy="100" r="14" fill="#fbbf24" opacity="0.8" style="animation: statusPulse 2s infinite ease-in-out;" />
+                                    <text x="250" y="104" font-family="'Font Awesome 6 Free'" font-weight="900" font-size="10" fill="#fff" text-anchor="middle"></text>
+                                </g>
+
+                                <!-- Valve-102 Shape (P&ID Butterfly Valve style) -->
+                                <polygon points="450,100 450,140 510,100 510,140" fill="rgba(244, 63, 94, 0.05)" stroke="#f43f5e" stroke-width="2.5" />
+                                <line x1="480" y1="120" x2="480" y2="90" stroke="#f43f5e" stroke-width="2.5" />
+                                <line x1="465" y1="90" x2="495" y2="90" stroke="#f43f5e" stroke-width="2.5" />
+                                <text x="480" y="160" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#f43f5e" text-anchor="middle">VALVE-102</text>
+                                
+                                <!-- Hotspot overlay VALVE-102 -->
+                                <g style="cursor: pointer;" onclick="selectPidTag('VALVE-102', 'Pressure Safety Valve', 'Critical Danger (Scale Build-up)', 'valve_inspection_reports.csv', 'Critical: Hydrostatic test flagged pressure relief lock. Corrosion build-up inside.')">
+                                    <circle cx="480" cy="120" r="14" fill="#ef4444" opacity="0.8" style="animation: statusPulse 1.5s infinite ease-in-out;" />
+                                    <text x="480" y="124" font-family="'Font Awesome 6 Free'" font-weight="900" font-size="10" fill="#fff" text-anchor="middle"></text>
+                                </g>
+                                
+                                <!-- Gas-Det-11 Shape (Sensor Box) -->
+                                <rect x="350" y="320" width="80" height="50" rx="6" fill="rgba(16, 185, 129, 0.05)" stroke="#10b981" stroke-width="2" />
+                                <circle cx="390" cy="345" r="10" fill="#10b981" />
+                                <text x="390" y="385" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#10b981" text-anchor="middle">GAS-DET-11</text>
+                                
+                                <!-- Hotspot overlay GAS-DET-11 -->
+                                <g style="cursor: pointer;" onclick="selectPidTag('GAS-DET-11', 'Methane Gas Sensor', 'Warning (Calibration Overdue)', 'gas_detector_incident_reports.json', 'Warning: Audit gap detected. Calendar drift (+18% Methane) exceeds Factory Act standard.')">
+                                    <circle cx="390" cy="320" r="14" fill="#fbbf24" opacity="0.8" style="animation: statusPulse 2.3s infinite ease-in-out;" />
+                                    <text x="390" y="324" font-family="'Font Awesome 6 Free'" font-weight="900" font-size="10" fill="#fff" text-anchor="middle"></text>
+                                </g>
+                                
+                                <!-- Labels -->
+                                <text x="60" y="140" font-family="sans-serif" font-size="10" fill="#94a3b8">MAIN INLET FEED</text>
+                                <text x="730" y="140" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="end">TO REFINERY STAGE 2</text>
+                                <text x="590" y="110" font-family="sans-serif" font-size="9" fill="#94a3b8">FLARE STACK</text>
+                            </svg>
+                        </div>
+                        
+                        <!-- Right: Info Panel -->
+                        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 14px;" id="pid-info-panel">
+                            <div style="text-align: center; margin-top: 30px; color: var(--text-muted);">
+                                <i class="fa-solid fa-crosshairs" style="font-size: 28px; margin-bottom: 12px; color: var(--text-dim);"></i>
+                                <h4>No Asset Selected</h4>
+                                <p style="font-size: 12px; margin-top: 6px;">Click any flashing alert hotspot on the blueprint layout to inspect raw documentation mapping.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 5: Compliance Audit & Auto-Evidence Generator -->
+            <div class="tab-content" id="tab-compliance-content">
+                <div class="patterns-workspace">
+                    <div class="workspace-header">
+                        <p class="text-muted">Cross-functional compliance manager. Validates operational states against Indian regulations (Factory Act, PESO standard, OISD rules) and auto-compiles audit packages.</p>
+                        <button class="btn btn-primary" onclick="generateCompliancePackage()"><i class="fa-solid fa-file-export"></i> Auto-Generate Audit Evidence Package</button>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 340px; gap: 20px; flex-grow: 1; overflow: hidden; margin-top: 10px;">
+                        <!-- Left Column: Compliance list -->
+                        <div class="insights-list" id="compliance-list-container" style="overflow-y: auto;">
+                            <!-- Loaded dynamically via API -->
+                        </div>
+                        
+                        <!-- Right Column: Compliance Matrix Heatmap -->
+                        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+                            <h4 style="font-size: 13.5px; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;"><i class="fa-solid fa-table-cells"></i> Regulatory Risk Heatmap</h4>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 4px;">Matrix mapping industrial standards against mapped device nodes. Colors indicate active compliance risks.</p>
+                            
+                            <!-- Heatmap Table -->
+                            <div style="display: grid; grid-template-columns: 80px repeat(3, 1fr); gap: 6px; text-align: center; font-size: 11px;">
+                                <!-- Header Row -->
+                                <div></div>
+                                <div style="font-weight: 600; color: var(--text-muted);">DET-11</div>
+                                <div style="font-weight: 600; color: var(--text-muted);">COMP-5</div>
+                                <div style="font-weight: 600; color: var(--text-muted);">VALVE-102</div>
+                                
+                                <!-- Factory Act Row -->
+                                <div style="font-weight: 600; text-align: left; align-self: center; color: var(--text-secondary);">Factory Act</div>
+                                <div style="background: #fbbf24; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer; box-shadow: 0 0 6px rgba(251,191,36,0.25);" onclick="filterCompliance('Factory Act')">Warning</div>
+                                <div style="background: #10b981; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer;" onclick="filterCompliance('Factory Act')">Pass</div>
+                                <div style="background: #10b981; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer;" onclick="filterCompliance('Factory Act')">Pass</div>
+                                
+                                <!-- PESO Row -->
+                                <div style="font-weight: 600; text-align: left; align-self: center; color: var(--text-secondary);">PESO Rules</div>
+                                <div style="background: #10b981; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer;" onclick="filterCompliance('PESO')">Pass</div>
+                                <div style="background: #ef4444; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer; box-shadow: 0 0 6px rgba(239,68,68,0.25); animation: statusPulse 1.8s infinite;" onclick="filterCompliance('PESO')">FAIL</div>
+                                <div style="background: #ef4444; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer; box-shadow: 0 0 6px rgba(239,68,68,0.25); animation: statusPulse 1.8s infinite;" onclick="filterCompliance('PESO')">FAIL</div>
+                                
+                                <!-- OISD Row -->
+                                <div style="font-weight: 600; text-align: left; align-self: center; color: var(--text-secondary);">OISD Permit</div>
+                                <div style="background: #10b981; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer;" onclick="filterCompliance('OISD')">Pass</div>
+                                <div style="background: #10b981; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer;" onclick="filterCompliance('OISD')">Pass</div>
+                                <div style="background: #10b981; color: #fff; padding: 8px 0; border-radius: 4px; font-weight: 700; cursor: pointer;" onclick="filterCompliance('OISD')">Pass</div>
+                            </div>
+                            
+                            <div style="border-top: 1px dashed var(--border-color); padding-top: 12px; font-size: 10.5px; color: var(--text-muted); line-height: 1.4;">
+                                <i class="fa-solid fa-circle-info"></i> <strong>Interactive filters:</strong> Click any heatmap row cell to narrow down active regulatory check cards on the left.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Evidence Modal Details -->
+    <div class="modal" id="evidence-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Evidence Details</h3>
+                <span class="close-modal" id="close-modal-btn">&times;</span>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Loaded Dynamically -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Initial Ingestion Modal -->
+    <div class="modal" id="ingest-modal" style="display: flex;">
+        <div class="modal-content" style="max-width: 520px; padding: 28px 24px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="font-size: 44px; color: var(--color-primary); margin-bottom: 12px;">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 6px;">Uninitialized Knowledge Platform</h3>
+                <p class="text-muted" style="font-size: 13px; line-height: 1.4;">PlantBrain has detected 7-12 disconnected industrial systems ready for ingestion.</p>
+            </div>
+            
+            <!-- Drag & Drop Upload Zone -->
+            <div id="drop-zone" style="border: 2px dashed var(--border-color); border-radius: 8px; padding: 24px; text-align: center; background: var(--bg-body); cursor: pointer; transition: border-color 0.3s ease; margin-bottom: 20px;">
+                <div style="font-size: 32px; color: var(--text-muted); margin-bottom: 8px;">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+                <h4 style="font-size: 13.5px; font-weight: 600; margin-bottom: 4px;">Drag & drop industrial documents</h4>
+                <p class="text-muted" style="font-size: 11.5px; margin-bottom: 12px;">Supports CSV logs, JSON incidents, and Markdown SOPs/manuals</p>
+                <button class="btn btn-secondary btn-sm" onclick="document.getElementById('file-input').click(); return false;">Browse Files</button>
+                <input type="file" id="file-input" multiple style="display: none;" />
+            </div>
+
+            <!-- List of selected files to ingest -->
+            <div id="selected-files-container" style="display: none; margin-bottom: 20px;">
+                <h4 style="font-size: 12px; font-weight: 600; margin-bottom: 8px; color: var(--text-dark);">Files to Import:</h4>
+                <div id="selected-files-list" style="display: flex; flex-direction: column; gap: 6px; max-height: 120px; overflow-y: auto; padding: 8px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px; font-size: 11px; text-align: left;">
+                    <!-- Appended dynamically -->
+                </div>
+            </div>
+            
+            <div id="ingest-progress-container" style="display: none; margin-bottom: 20px; text-align: center;">
+                <div style="margin-bottom: 8px; font-size: 12px; font-weight: 500;" id="ingest-progress-text">Analyzing schemas & mapping entities...</div>
+                <div style="width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden; position: relative;">
+                    <div id="ingest-progress-bar" style="width: 0%; height: 100%; background: var(--color-primary); transition: width 0.4s ease; border-radius: 3px;"></div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="btn btn-primary" id="start-ingest-btn" style="width: 100%; padding: 12px; font-weight: 500; justify-content: center; font-size: 13.5px; border-radius: 8px;">
+                    <i class="fa-solid fa-rocket"></i> Import Documents & Build Knowledge Graph
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Knowledge Graph Visualizer Modal -->
+    <div class="modal" id="graph-visualizer-modal">
+        <div class="modal-content" style="max-width: 900px; width: 90%; height: 80vh;">
+            <div class="modal-header">
+                <h3 id="graph-modal-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px;">
+                    <i class="fa-solid fa-circle-nodes"></i> Interactive Knowledge Graph Visualizer
+                </h3>
+                <span class="close-modal" id="close-graph-modal-btn">&times;</span>
+            </div>
+            <div class="modal-body" style="padding: 0; position: relative; flex: 1; overflow: hidden; background: var(--bg-main);">
+                <div style="position: absolute; top: 12px; left: 12px; z-index: 10; display: flex; flex-direction: column; gap: 6px; background: var(--bg-card); color: var(--text-primary); padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 11px; box-shadow: var(--shadow-md);">
+                    <strong style="color: var(--text-primary);">Graph Legend:</strong>
+                    <div style="display: flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #0284c7;"></span> Equipment</div>
+                    <div style="display: flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></span> Maintenance</div>
+                    <div style="display: flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span> Incident</div>
+                    <div style="display: flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span> Safety SOP</div>
+                    <div style="display: flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #6366f1;"></span> Manual</div>
+                </div>
+                <div style="position: absolute; top: 12px; right: 12px; z-index: 10; font-size: 10px; color: var(--text-muted); background: var(--bg-card); padding: 4px 8px; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: var(--shadow-sm);">
+                    💡 Drag nodes to interact. Zoom with mouse wheel.
+                </div>
+                <canvas id="graph-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=2"></script>
+</body>
+</html>
